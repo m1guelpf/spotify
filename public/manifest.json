@@ -1,0 +1,13 @@
+{
+    "name": "Spotify",
+    "short_name": "Spotify",
+    "icons": [{
+        "src": "./favicon.png",
+        "sizes": "196x196",
+        "type": "image/png"
+    }],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#38B2AC"
+}
