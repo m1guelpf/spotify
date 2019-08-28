@@ -14,6 +14,7 @@
         "kitetail/zttp": "^0.6.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
+        "m1guelpf/netlify-mix": "^0.1.0",
         "socialiteproviders/spotify": "^3.0",
         "tightenco/ziggy": "^0.7.1"
     },

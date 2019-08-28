@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f6ece4e767cc193892796ed8bf26d00",
+    "content-hash": "344577e0d91d070073404f0f327025fd",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1025,6 +1025,61 @@
             "time": "2019-08-07T15:10:45+00:00"
         },
         {
+            "name": "lcobucci/jwt",
+            "version": "3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lcobucci/jwt.git",
+                "reference": "a11ec5f4b4d75d1fcd04e133dede4c317aac9e18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/a11ec5f4b4d75d1fcd04e133dede4c317aac9e18",
+                "reference": "a11ec5f4b4d75d1fcd04e133dede4c317aac9e18",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "ext-openssl": "*",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1.5",
+                "phpmd/phpmd": "~2.2",
+                "phpunit/php-invoker": "~1.1",
+                "phpunit/phpunit": "^5.7 || ^7.3",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lcobucci\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Luís Otávio Cobucci Oblonczyk",
+                    "role": "Developer",
+                    "email": "lcobucci@gmail.com"
+                }
+            ],
+            "description": "A simple library to work with JSON Web Token and JSON Web Signature",
+            "keywords": [
+                "JWS",
+                "jwt"
+            ],
+            "time": "2019-05-24T18:30:49+00:00"
+        },
+        {
             "name": "league/flysystem",
             "version": "1.0.55",
             "source": {
@@ -1170,6 +1225,63 @@
                 "twitter"
             ],
             "time": "2016-08-17T00:36:58+00:00"
+        },
+        {
+            "name": "m1guelpf/netlify-mix",
+            "version": "v0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/m1guelpf/netlify-mix.git",
+                "reference": "8b835840f0638a8fd43594e3d891f81387c5bc5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/m1guelpf/netlify-mix/zipball/8b835840f0638a8fd43594e3d891f81387c5bc5e",
+                "reference": "8b835840f0638a8fd43594e3d891f81387c5bc5e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.8.*",
+                "lcobucci/jwt": "^3.3",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.8.*",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "M1guelpf\\NetlifyMix\\NetlifyMixServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "M1guelpf\\NetlifyMix\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Miguel Piedrafita",
+                    "role": "Developer",
+                    "email": "soy@miguelpiedrafita.com",
+                    "homepage": "https://miguelpiedrafita.com"
+                }
+            ],
+            "description": "Use Netlify as a CDN for your Laravel Mix assets",
+            "homepage": "https://github.com/m1guelpf/netlify-mix",
+            "keywords": [
+                "laravel-mix",
+                "m1guelpf",
+                "netlify"
+            ],
+            "time": "2019-07-14T13:49:57+00:00"
         },
         {
             "name": "monolog/monolog",
