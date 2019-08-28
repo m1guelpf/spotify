@@ -1,13 +1,28 @@
-self.addEventListener('install', () => self.skipWaiting())
+self.addEventListener('install', event => {
+    this.skipWaiting();
+});
 
-self.addEventListener('activate', () => {
-    self.clients.matchAll({
-        type: 'window'
-    }).then(windowClients => {
-        for (const windowClient of windowClients) {
-            // Force open pages to refresh, so that they have a chance to load the
-            // fresh navigation response from the local dev server.
-            windowClient.navigate(windowClient.url)
-        }
-    })
-})
+// Clear cache on activate
+self.addEventListener('activate', event => {
+    event.waitUntil(
+        caches.keys().then(cacheNames => {
+            return Promise.all(
+                cacheNames.map(cacheName => caches.delete(cacheName))
+            );
+        })
+    );
+});
+
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.open('spotify-dynamic').then(cache => {
+            return fetch(event.request).then(response => {
+                cache.put(event.request, response.clone());
+
+                return response;
+            }).catch(() => {
+                return cache.match(event.request);
+            });
+        })
+    )
+});
