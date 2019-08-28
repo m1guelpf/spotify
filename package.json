@@ -27,7 +27,9 @@
         "eslint": "^6.2.2",
         "eslint-plugin-vue": "^5.2.3",
         "mix-tailwindcss": "^1.1.0",
+        "popper.js": "^1.15.0",
         "tailwindcss": "^1.1.2",
-        "timeago.js": "^4.0.0-beta.2"
+        "timeago.js": "^4.0.0-beta.2",
+        "v-click-outside": "^2.1.3"
     }
 }
