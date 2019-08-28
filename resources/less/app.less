@@ -1,0 +1,21 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.flex-0 {
+    flex: 0 0 auto;
+}
+
+[data-activity-item] a {
+    @apply .text-teal-500 .border-b .border-transparent;
+
+    &:hover {
+        @apply .border-teal-500;
+    }
+}
+
+[data-alert-message] a {
+    @apply .font-medium .border-b .border-teal-700;
+}
