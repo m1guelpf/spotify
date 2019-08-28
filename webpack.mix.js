@@ -1,3 +1,5 @@
+const ASSET_PATH = process.env.MIX_ASSET_PATH || '/';
+
 const mix = require('laravel-mix')
 const path = require('path')
 require('mix-tailwindcss')
@@ -9,7 +11,10 @@ mix
       plugins: ['@babel/plugin-syntax-dynamic-import'],
   })
   .webpackConfig({
-    output: { chunkFilename: 'js/[name].js?id=[chunkhash]' },
+    output: {
+        chunkFilename: 'js/[name].js?id=[chunkhash]',
+        publicPath: ASSET_PATH,
+    },
     resolve: {
       alias: {
         vue$: 'vue/dist/vue.runtime.esm.js',
