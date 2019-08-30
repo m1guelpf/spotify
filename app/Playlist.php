@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Playlist extends Model
 {
+    use \Staudenmeir\LaravelUpsert\Eloquent\HasUpsertQueries;
+
     /**
      * The accessors to append to the model's array form.
      *

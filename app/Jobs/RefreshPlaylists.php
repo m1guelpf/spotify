@@ -34,19 +34,18 @@ class RefreshPlaylists implements ShouldQueue
      */
     public function handle()
     {
-        collect(Client::authenticateFor($this->user)->getUserPlaylists())->filter(function ($playlist) {
-            return $playlist['owner']['id'] === $this->user->id;
-        })->each(function ($playlist) {
-            $model = Playlist::firstOrNew(['id' => $playlist['id']]);
-
-            $model->fill([
-                'id' => $playlist['id'],
-                'user_id' => $this->user->id,
-                'name' => $playlist['name'],
-                'cover' => collect($playlist['images'])->first()['url'],
-            ]);
-
-            $model->save();
-        });
+        Playlist::upsert(
+            collect(Client::authenticateFor($this->user)->getUserPlaylists())->filter(function ($playlist) {
+                return $playlist['owner']['id'] === $this->user->id;
+            })->map(function ($playlist) {
+                return [
+                    'id' => $playlist['id'],
+                    'user_id' => $this->user->id,
+                    'name' => $playlist['name'],
+                    'cover' => collect($playlist['images'])->first()['url'],
+                ];
+            })->toArray(),
+            'id'
+        );
     }
 }
